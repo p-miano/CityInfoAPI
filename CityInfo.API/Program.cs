@@ -40,6 +40,10 @@ builder.Services.AddDbContext<CityInfoContext>(
     dbContextOptions => dbContextOptions.UseSqlite(
         builder.Configuration["ConnectionStrings:CityInfoDBConnectionString"]));// Add support for SQLite database
 
+builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>(); // Add support for repository pattern
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); // Add support for AutoMapper
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
