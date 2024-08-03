@@ -1,12 +1,14 @@
 ﻿using AutoMapper;
 using CityInfo.API.Models;
 using CityInfo.API.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 
 namespace CityInfo.API.Controllers
 {
     [ApiController] // This attribute configures this controller with features and behavior that improves the developer experience when working with APIs. It's optional, though. 
+    [Authorize]
     [Route("api/cities")]
     public class CitiesController : ControllerBase
     {

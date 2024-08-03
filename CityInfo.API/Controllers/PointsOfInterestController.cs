@@ -1,12 +1,14 @@
 ﻿using AutoMapper;
 using CityInfo.API.Models;
 using CityInfo.API.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CityInfo.API.Controllers
 {
     [Route("api/cities/{cityId}/pointsofinterest")]
+    [Authorize]
     [ApiController]
     public class PointsOfInterestController : ControllerBase
     {
@@ -119,10 +121,10 @@ namespace CityInfo.API.Controllers
             return NoContent();
         }
 
-	[HttpPatch("{pointofinterestid}")]
+        [HttpPatch("{pointofinterestid}")]
         public async Task<ActionResult> PartiallyUpdatePointOfInterest(
-           int cityId, int pointOfInterestId,
-           JsonPatchDocument<PointOfInterestForUpdateDto> patchDocument)
+               int cityId, int pointOfInterestId,
+               JsonPatchDocument<PointOfInterestForUpdateDto> patchDocument)
         {
             if (!await _cityInfoRepository.CityExistsAsync(cityId))
             {
