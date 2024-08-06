@@ -127,6 +127,3 @@ The CityInfo API has been deployed to Azure Web Services, making it accessible o
 ## Conclusion
 
 This project was a valuable learning experience in using various ASP.NET Core technologies for API development. It provided practical skills in building a robust and scalable web API with comprehensive logging, configuration management, and API documentation. These skills are essential for future projects as a .NET developer.
-
----
-The user is currently on the free plan, which is significantly limited by the number of requests. To increase your quota, you can check available plans following this link: [Upgrade your plan](https://c7d59216ee8ec59bda5e51ffc17a994d.auth.portal-pluginlab.ai/pricing).
